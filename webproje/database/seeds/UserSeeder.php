@@ -17,6 +17,6 @@ class UserSeeder extends Seeder
             ['name' => 'uye', 'password' => $password, 'email' => 'uye@uye','id'=>'3','email_verified_at'=>'','yetki'=>'2','remembertoken'=>'','created_at'=>'2020-06-28 12:29:13','updated_at'=>'2020-06-28 12:29:13'],
         ];
 
-        DB::table('users')->insert($users);
+        DB::table('User')->insert($users);
     }
 }
