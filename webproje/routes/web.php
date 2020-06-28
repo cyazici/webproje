@@ -37,9 +37,8 @@ Route::group(['middleware'=>['admin']],function() {
 
     Route::get('userupdate','ApanelController@userupdate')->name('userupdate.show');
 
-
-
 });
+
 Route::get('kullanici-guncelle/{id}','ApanelController@updateusers')->name('guncelleme-sayfasi');
 Route::put('kullanici-guncelle/{id}','ApanelController@update')->name('kullanici-guncelle');
 Route::get('kullanici-sil/{id}','ApanelController@kullanicisil')->name('kullanici-sil');
