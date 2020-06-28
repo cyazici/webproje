@@ -16,6 +16,10 @@ class KullaniciController extends Controller
     public function login(){
         return view('login');
     }
+    public  function logout(){
+        auth()->logout();
+        return redirect()->to('/login');
+    }
     public function kayit(Request $request){
 
 

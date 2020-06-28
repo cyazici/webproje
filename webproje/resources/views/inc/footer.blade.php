@@ -16,11 +16,11 @@
             </ul>
         </div>
         <div class="one_third">
-            <h6 class="title">Son Duyurular</h6>
+            @foreach($news as $new)
+            <h6 class="title">Son Haberler</h6>
             <ul class="nospace linklist">
-                <li><a href="#">Duyuru 1</a></li>
-                <li><a href="#">Duyuru 2</a></li>
-                <li><a href="#">Duyuru 3</a></li>
+                <li><a href="#">{{$new->title}}</a></li>
+                @endforeach
 
             </ul>
         </div>

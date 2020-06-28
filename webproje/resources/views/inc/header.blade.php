@@ -65,6 +65,10 @@
             <li><a href="about">Hakkımda</a></li>
             <li><a href="uyeiletisim">İletİşİm</a></li>
                 @yield('AdminPanelErişimLinki')
+            <li> <a href="#" onclick="   document.getElementById('cikis').submit();">
+                    Çıkış
+                </a></li>
+           <form id="cikis" action="{{ route('cikis')}}" method="POST" style="display: none;">@csrf </form>
 
         </ul>
         <!-- ################################################################################################ -->

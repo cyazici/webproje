@@ -2,7 +2,8 @@
 @section('baslik') Hakkimda @endsection
 
 @section('icerik')
-
+    @foreach($news as $new)
+        @endforeach
     @foreach($abouts as $about)
     @endforeach
 

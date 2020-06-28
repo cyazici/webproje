@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\messages;
 use Illuminate\Http\Request;
 use App\news;
 use App\abouts;
 use App\User;
+
 class SiteController extends Controller
 {
     public function index(){
@@ -15,13 +17,23 @@ class SiteController extends Controller
     }
     public function about(){
         $abouts=abouts::all();
-        return view('about',compact('abouts'));
+        $news=news::all();
+        return view('about',compact('abouts','news'));
     }
 
     public function uyeiletisim(){
         $userdata=User::all()->where('id',auth()->user()->id);
-        return view('uyeiletisim',compact('userdata'));
+        $news=news::all();
+        return view('uyeiletisim',compact('userdata','news'));
 
     }
+    public  function mesajgonder(){
+        $mesaj=new messages();
+        $mesaj->userId=auth()->user()->id;
+        $mesaj->message=\request('message');
+        $mesaj->save();
+        return redirect()->intended(route('uyeiletisim.show'));
+        }
+
 
 }

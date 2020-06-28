@@ -13,11 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware'=>['A']],function() {
+//Route::group(['middleware'=>['A']],function() {
 Route::get('index','SiteController@index')->name('index');
 Route::get('about','SiteController@about')->name('about.show');
 Route::get('uyeiletisim','SiteController@uyeiletisim')->name('uyeiletisim.show');
-});
+//});
 
 //-----------------Yönetim paneli İşlemleri
 
@@ -53,6 +53,12 @@ Route::post('giris-yap','KullaniciController@Giris')->name('giris-yap');
 
 Route::get('kayit','KullaniciController@register')->name('register.show');
 Route::get('login','KullaniciController@login')->name('login.show');
+
+Route::post('cikis','KullaniciController@logout')->name('cikis');
+
+Route::post('mesajgonder','SiteController@mesajgonder')->name('mesajgonder.show');
+
+
 
 //Route::get('yonetimpaneli','SiteController@panel')->name('');
 
