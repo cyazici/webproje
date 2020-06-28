@@ -2,10 +2,13 @@
 @section('baslik') Hakkimda @endsection
 
 @section('icerik')
+
+    @foreach($abouts as $about)
+    @endforeach
+
     <form method="POST" class="col-md-12 mt-5" action="{{route('aboutupdate.show')}}" >
         @csrf
-         @foreach($abouts as $about)
-                    @endforeach
+
         <div class="form-group">
             <div class="form-group ">
                 <label for="inputEmail4">Ad Soyad</label>
@@ -35,15 +38,19 @@
                             <label for="inputEmail4">Lise</label>
                             <input type="text" class="form-control" id="inputEmail4" name="Hscholl" value="{{$about->Hschool}}">
                         </div>
+                    </div>
                         <div class="form-group">
                             <div class="form-group ">
                                 <label for="inputEmail4">Üniversite</label>
                                 <input type="text" class="form-control" id="inputEmail4" name="uni" value="{{$about->uni}}">
                             </div>
 
-        </div>
 
+                </div>
+                </div></div></div>
 
         <button type="submit" class="btn btn-primary mt-2">Güncelle</button>
     </form>
+
+
 @endsection

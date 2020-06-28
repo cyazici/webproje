@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Login - srtdash</title>
+    <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="{{asset('admin-temp')}}/assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="{{asset('admin-temp')}}/assets/css/bootstrap.min.css">
@@ -51,8 +51,8 @@
             <form method="POST" action="{{ route('giris-yap') }}">
                 @csrf
                 <div class="login-form-head">
-                    <h4>Sign In</h4>
-                    <p>Hello there, Sign in and start managing your Admin Template</p>
+                    <h4>Giriş</h4>
+                {{--    <p>Hello there, Sign in and start managing your Admin Template</p>--}}
                 </div>
                 <div class="login-form-body">
                     <div class="form-gp">
@@ -71,26 +71,26 @@
                         <div class="col-6">
                             <div class="custom-control custom-checkbox mr-sm-2">
                                 <input type="checkbox" class="custom-control-input" id="customControlAutosizing" name="remember" {{ Cookie::get('password') !== null ? 'selected' : '' }}>
-                                <label class="custom-control-label" for="customControlAutosizing">Remember Me</label>
+                                <label class="custom-control-label" for="customControlAutosizing">Beni Hatırla</label>
                             </div>
                         </div>
                         <div class="col-6 text-right">
-                            <a href="#">Forgot Password?</a>
+                            <a href="#">Şifremi Unuttum</a>
                         </div>
                     </div>
                     <div class="submit-btn-area">
-                        <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        <button id="form_submit" type="submit">Giriş <i class="ti-arrow-right"></i></button>
                         <div class="login-other row mt-4">
-                            <div class="col-6">
+                          {{--  <div class="col-6">
                                 <a class="fb-login" href="#">Log in with <i class="fa fa-facebook"></i></a>
                             </div>
                             <div class="col-6">
                                 <a class="google-login" href="#">Log in with <i class="fa fa-google"></i></a>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="form-footer text-center mt-5">
-                        <p class="text-muted">Don't have an account? <a href="register.html">Sign up</a></p>
+                        <p class="text-muted">Hesabın yok mu? <a href="register">Kayıt Ol</a></p>
                     </div>
                 </div>
             </form>

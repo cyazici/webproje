@@ -64,7 +64,7 @@
             </li>
             <li><a href="about">Hakkımda</a></li>
             <li><a href="uyeiletisim">İletİşİm</a></li>
-
+                @yield('AdminPanelErişimLinki')
 
         </ul>
         <!-- ################################################################################################ -->

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Cookie;
 
 use Illuminate\Http\Request;
 use App\User;
+use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
+
 class KullaniciController extends Controller
 {
     public function register(){
@@ -14,13 +16,14 @@ class KullaniciController extends Controller
     public function login(){
         return view('login');
     }
-    public function kayit(){
+    public function kayit(Request $request){
+
 
         $user =new User;
         $user->name=request('name');
         $user->email=request('email');
         $user->password=bcrypt(request('password'));
-        $user->yetki='1';
+        $user->yetki='2';
         $user->save();
         return redirect()->intended(route('index'));
                    /* return view('register');*/
@@ -40,6 +43,7 @@ class KullaniciController extends Controller
         if (Auth::attempt($aa, request()->input('remember'))) {
             $user = auth()->user();
 
+
             if (request()->input('remember') !== null) {
                 Cookie::queue('email', $user->email, 120);
                 Cookie::queue('password', request('password'), 120);
@@ -49,12 +53,16 @@ class KullaniciController extends Controller
                 Cookie::queue( Cookie::forget('password'));
             }
 
-            if ($user->yetki=='2') {
-                return redirect()->intended(route('dashboard'));
+           /* if ($user->yetki=='2') {
+                return redirect()->intended(route('index'));
             }
             else if ($user->yetki=='1' || $user->hasRole('üye')) {
                 return redirect()->intended(route('index'));
+            }*/
+            if($user->yetki=='1' || '2'){
+                return redirect()->intended(route('index'));
             }
+
             else {
                 auth()->logout();
             }

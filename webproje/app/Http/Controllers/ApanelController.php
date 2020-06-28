@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\news;
 use App\User;
+use App\abouts;
 use Illuminate\Support\Facades\DB;
 class ApanelController extends Controller
 {
@@ -60,11 +61,14 @@ class ApanelController extends Controller
 
             public function hakkimda(){
                 $abouts=DB::table('abouts')->get();
+
+
                 return view('hakkimda',compact('abouts'));
             }
 
             public function hakkimdaguncelle(){
-                $abouts=DB::table('abouts')->where ('id','1')->update(
+
+                $abouts=DB::table('abouts')->where ('id','2')->update(
                     [
                     'name'=>\request('name'),
                     'phone'=>\request('phone'),
