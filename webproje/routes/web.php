@@ -56,8 +56,7 @@ Route::get('login','KullaniciController@login')->name('login.show');
 Route::post('cikis','KullaniciController@logout')->name('cikis');
 
 Route::post('mesajgonder','SiteController@mesajgonder')->name('mesajgonder.show');
-
-
+//a
 
 //Route::get('yonetimpaneli','SiteController@panel')->name('');
 
