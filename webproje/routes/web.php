@@ -59,5 +59,5 @@ Route::post('mesajgonder','SiteController@mesajgonder')->name('mesajgonder.show'
 //a
 
 //Route::get('yonetimpaneli','SiteController@panel')->name('');
-//
+/////
 
